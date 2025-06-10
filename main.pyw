@@ -6,7 +6,7 @@ import re
 import pandas as pd
 from datetime import datetime
 import json  # Pro přehlednější výpis dat
-import shutil  # Pro kopírování souborů
+import shutil  # Pro kopírování souborů yes
 
 window = Tk()
 window.geometry("800x600")  # Zvětšení okna pro lepší zobrazení
