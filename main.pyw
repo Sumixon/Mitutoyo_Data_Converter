@@ -101,7 +101,8 @@ class ModernApp:
                            foreground=colors['text'],
                            rowheight=30,
                            fieldbackground=colors['surface'],
-                           font=('Segoe UI', 9))
+                           font=('Segoe UI', 9)
+                           )
         
         self.style.configure('Modern.Treeview.Heading',
                            background=colors['primary'],
@@ -216,15 +217,18 @@ class ModernApp:
         self.file_table.heading("ra", text="📏 Ra [μm]")
         self.file_table.heading("rz", text="📐 Rz [μm]")
         
-        self.file_table.column("file", width=200, minwidth=150)
-        self.file_table.column("date", width=150, minwidth=100)
-        self.file_table.column("ra", width=100, minwidth=80)
-        self.file_table.column("rz", width=100, minwidth=80)
-        
+        self.file_table.column("file", width=200, minwidth=150, anchor='w')
+        self.file_table.column("date", width=150, minwidth=100, anchor='center')
+        self.file_table.column("ra", width=100, minwidth=80, anchor='center')
+        self.file_table.column("rz", width=100, minwidth=80, anchor='center')
+        self.file_table.tag_configure('oddrow', background='#f0f0f0')
+        self.file_table.tag_configure('evenrow', background='#ffffff')
+
         # Umístění treeview a scrollbarů
         self.file_table.grid(row=0, column=0, sticky='nsew')
         v_scrollbar.grid(row=0, column=1, sticky='ns')
         h_scrollbar.grid(row=1, column=0, sticky='ew')
+
         
         tree_container.grid_rowconfigure(0, weight=1)
         tree_container.grid_columnconfigure(0, weight=1)
@@ -259,7 +263,7 @@ class ModernApp:
         placeholder = ttk.Label(content_frame,
                                text="Nastavení budou přidána v další verzi",
                                font=('Segoe UI', 10),
-                               foreground='#6b7280')
+                               foreground='#6b7280')        
         placeholder.pack()
         
     def create_about_tab(self):
