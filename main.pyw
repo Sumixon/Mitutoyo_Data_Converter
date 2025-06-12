@@ -295,7 +295,7 @@ class ModernApp:
                                  foreground='#6b7280')
         version_label.pack(pady=(5, 20))
         
-        info_text = """Moderní aplikace pro převod dat z měřicího přístroje Mitutoyo SJ-412 do formátu Excel.
+        info_text = """Aplikace pro převod dat z měřicího přístroje Mitutoyo SJ-412 do formátu Excel.
 
 ✨ Funkce:
 • Import TXT souborů z měřicího přístroje
