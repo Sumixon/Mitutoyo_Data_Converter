@@ -37,7 +37,7 @@ class ModernApp:
         self.style = ttk.Style()
         self.style.theme_use('clam')
         
-        # Moderní barvy
+        # Barvy
         colors = {
             'primary': '#2563eb',      # Modrá
             'primary_hover': '#1d4ed8',
