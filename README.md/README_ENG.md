@@ -2,6 +2,8 @@
 
 A modern desktop application for converting measurement data from the Mitutoyo SJ-412 device from .txt format to Excel for Windows.
 
+Built with Python, the modern **customtkinter** GUI framework (dark/light mode) and **Pandas** for data processing.
+
 ## 📋 Features
 
 - ✅ **Import TXT files** from the Mitutoyo SJ-412 measuring device
@@ -11,6 +13,7 @@ A modern desktop application for converting measurement data from the Mitutoyo S
 - ✅ **Modern GUI** with elegant design
 - ✅ **Batch processing** - handle multiple files at once
 - ✅ **Intuitive user interface**
+- ✅ **Light / dark mode** and modern cards (Tabview)
 
 ## 🖥️ System Requirements
 
@@ -92,10 +95,10 @@ The resulting EXE file will be in the `dist/` folder.
 
 ## 🔧 Technical Details
 
-- **Framework:** Tkinter with modern ttk styling
+- **Framework:** customtkinter (modern wrapper around Tkinter) + ttk Treeview
 - **Data processing:** Pandas for data manipulation
 - **Excel export:** OpenPyXL for .xlsx file creation
-- **GUI Style:** Modern flat design with Material Design elements
+- **GUI Style:** Modern flat design, cards (CTkFrame), tabs (CTkTabview), dark/light mode
 - **File handling:** UTF-8 encoding with error handling support
 - **Architecture:** Object-oriented design with modular structure
 
@@ -168,9 +171,15 @@ Distributed under the MIT License. See `LICENSE` for more information.
 - [Python Software Foundation](https://www.python.org/) for a great programming language
 - [Pandas](https://pandas.pydata.org/) for powerful data processing
 - [OpenPyXL](https://openpyxl.readthedocs.io/) for Excel export functionality
-- [Tkinter](https://docs.python.org/3/library/tkinter.html) for the GUI framework
+- [Tkinter](https://docs.python.org/3/library/tkinter.html) as the base GUI toolkit
+- [customtkinter](https://github.com/TomSchimansky/CustomTkinter) for the modern look of the app
 
 ## 📈 Changelog
+
+### v2.1.0 (2026-01-08)
+- ✅ Migrated GUI to customtkinter (modern look, dark/light mode)
+- ✅ New layout using cards (CTkFrame) and CTkTabview
+- ✅ Improved readable Treeview table in dark mode
 
 ### v2.0.0 (2025-01-01)
 - ✅ Completely redesigned modern UI

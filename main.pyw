@@ -6,10 +6,13 @@ import pandas as pd
 from datetime import datetime
 import json
 import shutil
+import customtkinter as ctk
 
 class ModernApp:
     def __init__(self):
-        self.window = tk.Tk()
+        ctk.set_appearance_mode("System")
+        ctk.set_default_color_theme("blue")
+        self.window = ctk.CTk()
         self.setup_window()
         self.setup_style()
         self.setup_variables()
@@ -20,7 +23,7 @@ class ModernApp:
         self.window.geometry("1000x700")
         self.window.minsize(800, 600)
         self.window.title("Převod txt souboru do xls formátu - SJ412 Mitutoyo")
-        self.window.configure(bg='#f0f0f0')
+
         
         # Centrování okna
         self.center_window()
@@ -35,20 +38,37 @@ class ModernApp:
     def setup_style(self):
         """Nastavení moderního stylu"""
         self.style = ttk.Style()
-        self.style.theme_use('clam')
+        try:
+            self.style.theme_use('clam')
+        except Exception:
+            pass
         
-        # Barvy
-        colors = {
-            'primary': '#2563eb',      # Modrá
-            'primary_hover': '#1d4ed8',
-            'success': '#059669',      # Zelená
-            'danger': '#dc2626',       # Červená
-            'secondary': '#6b7280',    # Šedá
-            'background': '#f8fafc',   # Světle šedá
-            'surface': '#ffffff',      # Bílá
-            'text': '#1f2937',         # Tmavá
-            'text_light': '#6b7280'    # Světle šedá
-        }
+        # Barvy podle vzhledu customtkinter (Light / Dark)
+        appearance = ctk.get_appearance_mode()
+        if appearance == "Dark":
+            colors = {
+                'primary': '#3b82f6',      # Modrá
+                'primary_hover': '#2563eb',
+                'success': '#22c55e',      # Zelená
+                'danger': '#ef4444',       # Červená
+                'secondary': '#9ca3af',    # Šedá
+                'background': '#020617',   # Velmi tmavé pozadí
+                'surface': '#0f172a',      # Tmavá karta
+                'text': '#e5e7eb',         # Světlý text
+                'text_light': '#9ca3af'    # Světle šedý text
+            }
+        else:
+            colors = {
+                'primary': '#2563eb',      # Modrá
+                'primary_hover': '#1d4ed8',
+                'success': '#059669',      # Zelená
+                'danger': '#dc2626',       # Červená
+                'secondary': '#6b7280',    # Šedá
+                'background': '#f3f4f6',   # Světle šedá
+                'surface': '#e5e7eb',      # Mírně šedá (ne čistě bílá)
+                'text': '#111827',         # Tmavý text
+                'text_light': '#6b7280'    # Světle šedá
+            }
         
         # Styl pro tlačítka
         self.style.configure('Primary.TButton',
@@ -95,19 +115,29 @@ class ModernApp:
                                 ('active', colors['background'])],
                       foreground=[('selected', 'white')])
         
-        # Styl pro Treeview
-        self.style.configure('Modern.Treeview',
-                           background=colors['surface'],
-                           foreground=colors['text'],
-                           rowheight=30,
-                           fieldbackground=colors['surface'],
-                           font=('Segoe UI', 9)
-                           )
-        
-        self.style.configure('Modern.Treeview.Heading',
-                           background=colors['primary'],
-                           foreground='white',
-                           font=('Segoe UI', 10, 'bold'))
+        # Styl pro Treeview – aby nelískal bílou v Dark režimu
+        self.style.configure(
+            'Modern.Treeview',
+            background=colors['surface'],
+            foreground=colors['text'],
+            rowheight=30,
+            fieldbackground=colors['surface'],
+            font=('Segoe UI', 9),
+            borderwidth=0
+        )
+
+        self.style.configure(
+            'Modern.Treeview.Heading',
+            background=colors['primary'],
+            foreground='white',
+            font=('Segoe UI', 10, 'bold')
+        )
+
+        self.style.map(
+            'Modern.Treeview',
+            background=[('selected', colors['primary'])],
+            foreground=[('selected', 'white')]
+        )
         
     def setup_variables(self):
         """Nastavení proměnných"""
@@ -118,86 +148,100 @@ class ModernApp:
     def create_widgets(self):
         """Vytvoření widgets"""
         # Hlavní container
-        main_container = ttk.Frame(self.window)
+        main_container = ctk.CTkFrame(self.window, fg_color="transparent")
         main_container.pack(fill='both', expand=True, padx=20, pady=20)
         
         # Nadpis
-        title_frame = ttk.Frame(main_container)
+        title_frame = ctk.CTkFrame(main_container, fg_color="transparent")
         title_frame.pack(fill='x', pady=(0, 20))
         
-        title_label = ttk.Label(title_frame, 
-                               text="Převod dat z Mitutoyo SJ-412",
-                               font=('Segoe UI', 20, 'bold'))
+        title_label = ctk.CTkLabel(
+            title_frame,
+            text="Převod dat z Mitutoyo SJ-412",
+            font=('Segoe UI', 20, 'bold')
+        )
         title_label.pack()
         
-        subtitle_label = ttk.Label(title_frame,
-                                  text="Aplikace pro zpracování měřicích dat",
-                                  font=('Segoe UI', 10),
-                                  foreground='#6b7280')
+        subtitle_label = ctk.CTkLabel(
+            title_frame,
+            text="Aplikace pro zpracování měřicích dat",
+            font=('Segoe UI', 10),
+            text_color="#6b7280"
+        )
         subtitle_label.pack()
         
-        # Notebook pro záložky
-        self.notebook = ttk.Notebook(main_container)
-        self.notebook.pack(fill='both', expand=True)
-        
+        # Moderní záložky
+        self.tabview = ctk.CTkTabview(main_container)
+        self.tabview.pack(fill='both', expand=True)
+
         # Záložky
-        self.create_import_tab()
-        self.create_settings_tab()
-        self.create_about_tab()
+        self.import_tab = self.tabview.add("📁 Import")
+        self.settings_tab = self.tabview.add("⚙️ Nastavení")
+        self.about_tab = self.tabview.add("ℹ️ O programu")
+
+        self.create_import_tab(self.import_tab)
+        self.create_settings_tab(self.settings_tab)
+        self.create_about_tab(self.about_tab)
         
-    def create_import_tab(self):
+    def create_import_tab(self, parent):
         """Vytvoření záložky Import"""
-        import_tab = ttk.Frame(self.notebook)
-        self.notebook.add(import_tab, text="📁 Import")
-        
         # Container pro obsah
-        content_frame = ttk.Frame(import_tab)
+        content_frame = ctk.CTkFrame(parent, fg_color="transparent")
         content_frame.pack(fill='both', expand=True, padx=20, pady=20)
         
         # Panel s tlačítky
-        button_panel = ttk.Frame(content_frame)
+        button_panel = ctk.CTkFrame(content_frame, fg_color="transparent")
         button_panel.pack(fill='x', pady=(0, 20))
         
         # Card styl pro tlačítka
-        card_frame = ttk.Frame(button_panel, relief='solid', borderwidth=1)
+        card_frame = ctk.CTkFrame(button_panel, corner_radius=12)
         card_frame.pack(fill='x', pady=10)
-        card_frame.configure(style='Card.TFrame')
         
-        button_container = ttk.Frame(card_frame)
-        button_container.pack(padx=20, pady=15)
+        button_container = ctk.CTkFrame(card_frame, fg_color="transparent")
+        button_container.pack(padx=20, pady=15, fill='x')
         
-        self.import_btn = ttk.Button(button_container,
-                                   text="📂 Importovat soubory",
-                                   command=self.load_txt_files,
-                                   style='Primary.TButton')
+        self.import_btn = ctk.CTkButton(
+            button_container,
+            text="📂 Importovat soubory",
+            command=self.load_txt_files
+        )
         self.import_btn.pack(side='left', padx=(0, 10))
         
-        self.export_btn = ttk.Button(button_container,
-                                   text="📊 Exportovat do Excel",
-                                   command=self.export_to_excel,
-                                   style='Success.TButton',
-                                   state='disabled')
+        self.export_btn = ctk.CTkButton(
+            button_container,
+            text="📊 Exportovat do Excel",
+            command=self.export_to_excel,
+            state='disabled'
+        )
         self.export_btn.pack(side='left', padx=(0, 10))
         
-        self.clear_btn = ttk.Button(button_container,
-                                  text="🗑️ Vymazat soubory",
-                                  command=self.clear_files,
-                                  style='Danger.TButton')
+        self.clear_btn = ctk.CTkButton(
+            button_container,
+            text="🗑️ Vymazat soubory",
+            command=self.clear_files,
+            fg_color="#dc2626",
+            hover_color="#b91c1c"
+        )
         self.clear_btn.pack(side='left')
         
         # Tabulka
-        table_frame = ttk.Frame(content_frame)
+        table_card = ctk.CTkFrame(content_frame, corner_radius=12)
+        table_card.pack(fill='both', expand=True, pady=(0, 10))
+
+        table_frame = ctk.CTkFrame(table_card, fg_color="transparent")
         table_frame.pack(fill='both', expand=True, pady=(0, 10))
         
         # Nadpis tabulky
-        table_title = ttk.Label(table_frame,
-                               text="Importované soubory",
-                               font=('Segoe UI', 12, 'bold'))
-        table_title.pack(anchor='w', pady=(0, 10))
+        table_title = ctk.CTkLabel(
+            table_frame,
+            text="Importované soubory",
+            font=('Segoe UI', 12, 'bold')
+        )
+        table_title.pack(anchor='w', padx=16, pady=(16, 10))
         
         # Treeview s moderním stylem
         tree_container = ttk.Frame(table_frame)
-        tree_container.pack(fill='both', expand=True)
+        tree_container.pack(fill='both', expand=True, padx=16, pady=(0, 16))
         
         # Scrollbary
         v_scrollbar = ttk.Scrollbar(tree_container, orient='vertical')
@@ -237,63 +281,75 @@ class ModernApp:
         h_scrollbar.config(command=self.file_table.xview)
         
         # Instrukce
-        info_frame = ttk.Frame(content_frame)
+        info_frame = ctk.CTkFrame(content_frame, fg_color="transparent")
         info_frame.pack(fill='x', pady=(10, 0))
         
-        info_text = ttk.Label(info_frame,
-                            text="💡 Tip: Vyberte TXT soubory z měřicího přístroje a exportujte je do Excelu",
-                            font=('Segoe UI', 9),
-                            foreground='#6b7280')
+        info_text = ctk.CTkLabel(
+            info_frame,
+            text="💡 Tip: Vyberte TXT soubory z měřicího přístroje a exportujte je do Excelu",
+            font=('Segoe UI', 9),
+            text_color="#6b7280"
+        )
         info_text.pack()
         
-    def create_settings_tab(self):
+    def create_settings_tab(self, parent):
         """Vytvoření záložky Nastavení"""
-        settings_tab = ttk.Frame(self.notebook)
-        self.notebook.add(settings_tab, text="⚙️ Nastavení")
-        
-        content_frame = ttk.Frame(settings_tab)
+        content_frame = ctk.CTkFrame(parent, fg_color="transparent")
         content_frame.pack(fill='both', expand=True, padx=20, pady=20)
         
-        title = ttk.Label(content_frame,
-                         text="Nastavení aplikace",
-                         font=('Segoe UI', 16, 'bold'))
-        title.pack(pady=(0, 20))
+        card = ctk.CTkFrame(content_frame, corner_radius=12)
+        card.pack(fill='x', pady=(0, 20))
+
+        title = ctk.CTkLabel(
+            card,
+            text="Nastavení aplikace",
+            font=('Segoe UI', 16, 'bold')
+        )
+        title.pack(padx=16, pady=(16, 8), anchor='w')
         
         # Zde můžete přidat nastavení podle potřeby
-        placeholder = ttk.Label(content_frame,
-                               text="Nastavení budou přidána v další verzi",
-                               font=('Segoe UI', 10),
-                               foreground='#6b7280')        
-        placeholder.pack()
+        placeholder = ctk.CTkLabel(
+            card,
+            text="Nastavení budou přidána v další verzi",
+            font=('Segoe UI', 10),
+            text_color="#6b7280"
+        )
+        placeholder.pack(padx=16, pady=(0, 16), anchor='w')
         
-    def create_about_tab(self):
+    def create_about_tab(self, parent):
         """Vytvoření záložky O programu"""
-        about_tab = ttk.Frame(self.notebook)
-        self.notebook.add(about_tab, text="ℹ️ O programu")
-        
-        content_frame = ttk.Frame(about_tab)
-        content_frame.pack(fill='both', expand=True, padx=40, pady=40)
+        content_frame = ctk.CTkFrame(parent, fg_color="transparent")
+        content_frame.pack(fill='both', expand=True, padx=20, pady=20)
+
+        card = ctk.CTkFrame(content_frame, corner_radius=12)
+        card.pack(fill='both', expand=True)
         
         # Logo nebo ikona
-        logo_frame = ttk.Frame(content_frame)
-        logo_frame.pack(pady=(0, 20))
+        logo_frame = ctk.CTkFrame(card, fg_color="transparent")
+        logo_frame.pack(pady=(16, 10))
         
-        logo_label = ttk.Label(logo_frame,
-                              text="🔧",
-                              font=('Segoe UI', 48))
+        logo_label = ctk.CTkLabel(
+            logo_frame,
+            text="🔧",
+            font=('Segoe UI', 48)
+        )
         logo_label.pack()
         
         # Informace o aplikaci
-        app_title = ttk.Label(content_frame,
-                             text="Mitutoyo Data Converter",
-                             font=('Segoe UI', 18, 'bold'))
+        app_title = ctk.CTkLabel(
+            card,
+            text="Mitutoyo Data Converter",
+            font=('Segoe UI', 18, 'bold')
+        )
         app_title.pack()
         
-        version_label = ttk.Label(content_frame,
-                                 text="Verze 2.0 - Moderní edice",
-                                 font=('Segoe UI', 12),
-                                 foreground='#6b7280')
-        version_label.pack(pady=(5, 20))
+        version_label = ctk.CTkLabel(
+            card,
+            text="Verze 2.0 - Moderní edice",
+            font=('Segoe UI', 12),
+            text_color="#6b7280"
+        )
+        version_label.pack(pady=(5, 14))
         
         info_text = """Aplikace pro převod dat z měřicího přístroje Mitutoyo SJ-412 do formátu Excel.
 
@@ -305,13 +361,15 @@ class ModernApp:
 
 👨‍💻 Autor: Roman Denev
 📅 Vytvořeno: 2025
-🐍 Technologie: Python, Tkinter, Pandas"""
+🐍 Technologie: Python, Tkinter, Pandas, customtkinter"""
         
-        info_label = ttk.Label(content_frame,
-                              text=info_text,
-                              font=('Segoe UI', 10),
-                              justify='left')
-        info_label.pack()
+        info_label = ctk.CTkLabel(
+            card,
+            text=info_text,
+            font=('Segoe UI', 10),
+            justify='left'
+        )
+        info_label.pack(padx=16, pady=(0, 16), anchor='w')
         
     # Původní funkce s malými úpravami pro kompatibilitu
     def load_txt_files(self):
@@ -370,7 +428,7 @@ class ModernApp:
                 print(f"Chyba při importu {file_name}: {e}")
         
         if imported_files:
-            self.export_btn.config(state='normal')
+            self.export_btn.configure(state='normal')
 
     def export_to_excel(self):
         """Exportuje data do Excel formátu."""
@@ -476,7 +534,7 @@ class ModernApp:
                 for item in self.file_table.get_children():
                     self.file_table.delete(item)
                 
-                self.export_btn.config(state='disabled')
+                self.export_btn.configure(state='disabled')
                 messagebox.showinfo("Hotovo", "Soubory byly úspěšně smazány")
         except Exception as e:
             print(f"Chyba při mazání souborů: {e}")

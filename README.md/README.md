@@ -2,6 +2,8 @@
 
 Moderní desktop aplikace pro převod měřicích dat z přístroje Mitutoyo SJ-412 z formátu .txt do Excel pro Windows.
 
+Postavena na Pythonu, moderním GUI frameworku **customtkinter** (dark/light režim) a **Pandas** pro práci s daty.
+
 ## 📋 Funkce
 
 - ✅ **Import TXT souborů** z měřicího přístroje Mitutoyo SJ-412
@@ -11,6 +13,7 @@ Moderní desktop aplikace pro převod měřicích dat z přístroje Mitutoyo SJ-
 - ✅ **Moderní GUI** s elegantním designem
 - ✅ **Batch processing** - zpracování více souborů najednou
 - ✅ **Intuitivní uživatelské rozhraní**
+- ✅ **Světlý / tmavý režim** a moderní karty (Tabview)
 
 ## 🖥️ Systémové požadavky
 
@@ -93,10 +96,10 @@ Výsledný EXE soubor najdete ve složce `dist/`.
 
 ## 🔧 Technické detaily
 
-- **Framework:** Tkinter s moderním ttk stylingem
+- **Framework:** customtkinter (moderní wrapper nad Tkinter) + ttk Treeview
 - **Data processing:** Pandas pro manipulaci s daty
 - **Excel export:** OpenPyXL pro vytváření .xlsx souborů
-- **GUI Style:** Modern flat design s Material Design prvky
+- **GUI Style:** Modern flat design, karty (CTkFrame), záložky (CTkTabview), dark/light režim
 - **File handling:** UTF-8 encoding s podporou chybových stavů
 - **Architektura:** Objektově orientovaný design s modulární strukturou
 
@@ -169,9 +172,15 @@ Distributed under the MIT License. See `LICENSE` for more information.
 - [Python Software Foundation](https://www.python.org/) za skvělý programovací jazyk
 - [Pandas](https://pandas.pydata.org/) za výkonné data processing
 - [OpenPyXL](https://openpyxl.readthedocs.io/) za Excel export funkcionalitu
-- [Tkinter](https://docs.python.org/3/library/tkinter.html) za GUI framework
+- [Tkinter](https://docs.python.org/3/library/tkinter.html) jako základní GUI toolkit
+- [customtkinter](https://github.com/TomSchimansky/CustomTkinter) za moderní vzhled aplikace
 
 ## 📈 Changelog
+
+### v2.1.0 (2026-01-08)
+- ✅ Migrace GUI na customtkinter (moderní vzhled, dark/light režim)
+- ✅ Nové rozložení pomocí karet (CTkFrame) a CTkTabview
+- ✅ Vylepšené čitelné zobrazení tabulky (Treeview) v tmavém režimu
 
 ### v2.0.0 (2025-01-01)
 - ✅ Kompletně přepracované moderní UI
