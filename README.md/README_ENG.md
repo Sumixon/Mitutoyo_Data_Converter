@@ -27,18 +27,21 @@ Built with Python, the modern **customtkinter** GUI framework (dark/light mode) 
 ### Option 1: Run from source
 
 1. **Clone the repository:**
+
    ```bash
    git clone https://github.com/Sumixon/mitutoyo-converter.git
    cd mitutoyo-converter
    ```
 
 2. **Create a virtual environment:**
+
    ```bash
    python -m venv venv
    venv\Scripts\activate
    ```
 
 3. **Install dependencies:**
+
    ```bash
    pip install -r requirements.txt
    ```
@@ -68,30 +71,30 @@ The resulting EXE file will be in the `dist/` folder.
 
 ## 📊 Supported Parameters
 
-| Parameter | Unit | Description |
-|-----------|------|-------------|
-| Ra | μm | Arithmetic average roughness |
-| Rz | μm | Mean roughness depth |
-| Rq | μm | RMS roughness |
-| Rp | μm | Maximum profile peak height |
-| Rv | μm | Maximum profile valley depth |
-| Rsk | μm | Profile skewness |
-| Rku | μm | Profile kurtosis |
-| Rc | μm | Mean height of profile elements |
-| RPc | /cm | Peak count per cm |
-| RSm | μm | Mean spacing of profile elements |
-| RDq | μm | Root mean square slope |
-| Rmr | % | Material ratio of the bearing length curve |
-| Rdc | μm | Profile height |
-| Rt | μm | Total height of the profile |
-| Rz1max | μm | Maximum roughness height |
-| Rk | μm | Core roughness depth |
-| Rpk | μm | Reduced peak height |
-| Rvk | μm | Reduced valley depth |
-| Mr1 | % | Material ratio 1 |
-| Mr2 | % | Material ratio 2 |
-| A1 | - | Area above the core |
-| A2 | - | Area below the core |
+| Parameter | Unit | Description                                |
+| --------- | ---- | ------------------------------------------ |
+| Ra        | μm   | Arithmetic average roughness               |
+| Rz        | μm   | Mean roughness depth                       |
+| Rq        | μm   | RMS roughness                              |
+| Rp        | μm   | Maximum profile peak height                |
+| Rv        | μm   | Maximum profile valley depth               |
+| Rsk       | μm   | Profile skewness                           |
+| Rku       | μm   | Profile kurtosis                           |
+| Rc        | μm   | Mean height of profile elements            |
+| RPc       | /cm  | Peak count per cm                          |
+| RSm       | μm   | Mean spacing of profile elements           |
+| RDq       | μm   | Root mean square slope                     |
+| Rmr       | %    | Material ratio of the bearing length curve |
+| Rdc       | μm   | Profile height                             |
+| Rt        | μm   | Total height of the profile                |
+| Rz1max    | μm   | Maximum roughness height                   |
+| Rk        | μm   | Core roughness depth                       |
+| Rpk       | μm   | Reduced peak height                        |
+| Rvk       | μm   | Reduced valley depth                       |
+| Mr1       | %    | Material ratio 1                           |
+| Mr2       | %    | Material ratio 2                           |
+| A1        | -    | Area above the core                        |
+| A2        | -    | Area below the core                        |
 
 ## 🔧 Technical Details
 
@@ -111,7 +114,7 @@ The app expects TXT files from the Mitutoyo SJ-412 in the following structure:
  Date;2025-01-01;
  Time;10:30:15;
 
- //CalcResult  
+ //CalcResult
  Ra;1.234;μm
  Rz;5.678;μm
  Rq;1.456;μm
@@ -128,18 +131,22 @@ The app expects TXT files from the Mitutoyo SJ-412 in the following structure:
 ### Common issues:
 
 **App does not start:**
+
 - Check that Python 3.8+ is installed
 - Verify all dependencies: `pip install -r requirements.txt`
 
 **Error reading TXT file:**
+
 - Ensure the file is in the correct Mitutoyo SJ-412 format
 - Check that file encoding is UTF-8
 
 **Excel export not working:**
+
 - Check write permissions for the target folder
 - Make sure the target Excel file is not open
 
 **Slow processing:**
+
 - For a large number of files, consider processing in smaller batches
 - Check available RAM
 
@@ -152,6 +159,7 @@ The app expects TXT files from the Mitutoyo SJ-412 in the following structure:
 5. Open a Pull Request
 
 ### Coding standards:
+
 - Use Python PEP 8
 - Add docstrings for all functions
 - Write tests for new features
@@ -163,6 +171,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## 👨‍💻 Author
 
 **Roman Denev (Sumixon)**
+
 - GitHub: [@Sumixon](https://github.com/Sumixon)
 - Email: romna.denev@gmail.com
 
@@ -177,11 +186,13 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## 📈 Changelog
 
 ### v2.1.0 (2026-01-08)
+
 - ✅ Migrated GUI to customtkinter (modern look, dark/light mode)
 - ✅ New layout using cards (CTkFrame) and CTkTabview
 - ✅ Improved readable Treeview table in dark mode
 
 ### v2.0.0 (2025-01-01)
+
 - ✅ Completely redesigned modern UI
 - ✅ Improved TXT file parser with better error handling
 - ✅ Extended support for all roughness parameters
@@ -189,6 +200,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 - ✅ Added tabs for better organization
 
 ### v1.0.0 (2024-12-01)
+
 - ✅ Initial version of the application
 - ✅ Basic import/export functionality
 - ✅ Tkinter GUI with basic design

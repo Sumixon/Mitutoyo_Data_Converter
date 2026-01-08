@@ -27,23 +27,27 @@ Postavena na Pythonu, moderním GUI frameworku **customtkinter** (dark/light re�
 ### Možnost 1: Spuštění ze zdrojového kódu
 
 1. **Klonování repozitáře:**
+
 ```bash
 git clone https://github.com/Sumixon/mitutoyo-converter.git
 cd mitutoyo-converter
 ```
 
 2. **Vytvoření virtuálního prostředí:**
+
 ```bash
 python -m venv venv
 venv\Scripts\activate
 ```
 
 3. **Instalace závislostí:**
+
 ```bash
 pip install -r requirements.txt
 ```
 
 4. **Spuštění aplikace:**
+
 ```bash
 python main.pyw
 ```
@@ -57,7 +61,6 @@ pyinstaller --onefile --windowed --icon=icon.ico main.pyw
 
 Výsledný EXE soubor najdete ve složce `dist/`.
 
-
 ## 🚀 Rychlý start
 
 1. **Spusťte aplikaci** - `python main.pyw`
@@ -69,30 +72,30 @@ Výsledný EXE soubor najdete ve složce `dist/`.
 
 ## 📊 Podporované parametry
 
-| Parametr | Jednotka | Popis |
-|----------|----------|--------|
-| Ra | μm | Průměrná aritmetická drsnost |
-| Rz | μm | Průměrná výška drsnosti |
-| Rq | μm | Průměrná kvadratická drsnost |
-| Rp | μm | Maximální výška výstupku |
-| Rv | μm | Maximální hloubka prohlubně |
-| Rsk | μm | Šikmost profilu |
-| Rku | μm | Špičatost profilu |
-| Rc | μm | Průměrná výška elementu |
-| RPc | /cm | Počet elementů na cm |
-| RSm | μm | Průměrná vzdálenost elementů |
-| RDq | μm | Střední kvadratický sklon |
-| Rmr | % | Relativní délka nesoucí křivky |
-| Rdc | μm | Výška profilu |
-| Rt | μm | Celková výška profilu |
-| Rz1max | μm | Maximální výška drsnosti |
-| Rk | μm | Hloubka jádra drsnosti |
-| Rpk | μm | Redukovaná výška výstupků |
-| Rvk | μm | Redukovaná hloubka prohlubní |
-| Mr1 | % | Relativní délka nesoucí křivky 1 |
-| Mr2 | % | Relativní délka nesoucí křivky 2 |
-| A1 | - | Plocha nad jádrem |
-| A2 | - | Plocha pod jádrem |
+| Parametr | Jednotka | Popis                            |
+| -------- | -------- | -------------------------------- |
+| Ra       | μm       | Průměrná aritmetická drsnost     |
+| Rz       | μm       | Průměrná výška drsnosti          |
+| Rq       | μm       | Průměrná kvadratická drsnost     |
+| Rp       | μm       | Maximální výška výstupku         |
+| Rv       | μm       | Maximální hloubka prohlubně      |
+| Rsk      | μm       | Šikmost profilu                  |
+| Rku      | μm       | Špičatost profilu                |
+| Rc       | μm       | Průměrná výška elementu          |
+| RPc      | /cm      | Počet elementů na cm             |
+| RSm      | μm       | Průměrná vzdálenost elementů     |
+| RDq      | μm       | Střední kvadratický sklon        |
+| Rmr      | %        | Relativní délka nesoucí křivky   |
+| Rdc      | μm       | Výška profilu                    |
+| Rt       | μm       | Celková výška profilu            |
+| Rz1max   | μm       | Maximální výška drsnosti         |
+| Rk       | μm       | Hloubka jádra drsnosti           |
+| Rpk      | μm       | Redukovaná výška výstupků        |
+| Rvk      | μm       | Redukovaná hloubka prohlubní     |
+| Mr1      | %        | Relativní délka nesoucí křivky 1 |
+| Mr2      | %        | Relativní délka nesoucí křivky 2 |
+| A1       | -        | Plocha nad jádrem                |
+| A2       | -        | Plocha pod jádrem                |
 
 ## 🔧 Technické detaily
 
@@ -112,7 +115,7 @@ Aplikace očekává TXT soubory ve formátu Mitutoyo SJ-412 s následující str
 Date;2025-01-01;
 Time;10:30:15;
 
-//CalcResult  
+//CalcResult
 Ra;1.234;μm
 Rz;5.678;μm
 Rq;1.456;μm
@@ -129,18 +132,22 @@ Speed;0.5;mm/s
 ### Časté problémy:
 
 **Aplikace se nespustí:**
+
 - Zkontrolujte instalaci Python 3.8+
 - Ověřte instalaci všech závislostí: `pip install -r requirements.txt`
 
 **Chyba při čtení TXT souboru:**
+
 - Zkontrolujte, že soubor je ve správném formátu Mitutoyo SJ-412
 - Ověřte kódování souboru (mělo by být UTF-8)
 
 **Export do Excel nefunguje:**
+
 - Zkontrolujte oprávnění k zápisu do cílové složky
 - Ujistěte se, že cílový Excel soubor není otevřený
 
 **Pomalé zpracování:**
+
 - Pro velké množství souborů zvažte zpracování po menších dávkách
 - Zkontrolujte dostupnou RAM
 
@@ -153,6 +160,7 @@ Speed;0.5;mm/s
 5. Otevřete Pull Request
 
 ### Coding standards:
+
 - Používejte Python PEP 8
 - Přidejte dokumentaci ke všem funkcím
 - Napište testy pro nové funkce
@@ -164,6 +172,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## 👨‍💻 Autor
 
 **Roman Denev (Sumixon)**
+
 - GitHub: [@Sumixon](https://github.com/Sumixon)
 - Email: romna.denev@gmail.com
 
@@ -178,11 +187,13 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## 📈 Changelog
 
 ### v2.1.0 (2026-01-08)
+
 - ✅ Migrace GUI na customtkinter (moderní vzhled, dark/light režim)
 - ✅ Nové rozložení pomocí karet (CTkFrame) a CTkTabview
 - ✅ Vylepšené čitelné zobrazení tabulky (Treeview) v tmavém režimu
 
 ### v2.0.0 (2025-01-01)
+
 - ✅ Kompletně přepracované moderní UI
 - ✅ Vylepšený parser TXT souborů s lepším error handlingem
 - ✅ Rozšířená podpora všech parametrů drsnosti
@@ -190,6 +201,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 - ✅ Přidány záložky pro lepší organizaci
 
 ### v1.0.0 (2024-12-01)
+
 - ✅ První verze aplikace
 - ✅ Základní import/export funkcionalita
 - ✅ Tkinter GUI s základním designem
