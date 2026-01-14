@@ -66,7 +66,7 @@ Výsledný EXE soubor najdete ve složce `dist/`.
 ## 🚀 Rychlý start
 
 1. **Spusťte aplikaci** - `python main.pyw`
-	- Jazyk UI přepnete vlajkami v horní části okna.
+   - Jazyk UI přepnete vlajkami v horní části okna.
 2. **Importujte soubory** - klikněte na "📂 Importovat soubory"
 3. **Vyberte TXT soubory** z měřicího přístroje Mitutoyo SJ-412
 4. **Zkontrolujte data** v tabulce
