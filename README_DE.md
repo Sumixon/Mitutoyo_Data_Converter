@@ -75,30 +75,30 @@ Die EXE befindet sich anschließend im Ordner `dist/`.
 
 ## 📊 Unterstützte Parameter
 
-| Parameter | Einheit | Beschreibung                           |
-| -------- | ------- | -------------------------------------- |
-| Ra       | μm      | Arithmetische Mittenrauheit            |
-| Rz       | μm      | Mittlere Rautiefe                      |
-| Rq       | μm      | Quadratische Mittenrauheit (RMS)       |
-| Rp       | μm      | Maximale Profilspitzenhöhe             |
-| Rv       | μm      | Maximale Profiltal-Tiefe               |
-| Rsk      | μm      | Profilschiefenwert                     |
-| Rku      | μm      | Profilwölbungswert                     |
-| Rc       | μm      | Mittlere Höhe der Profilelemente       |
-| RPc      | /cm     | Anzahl der Profilelemente pro cm       |
-| RSm      | μm      | Mittlerer Abstand der Profilelemente   |
-| RDq      | μm      | Mittlere quadratische Steigung         |
-| Rmr      | %       | Traganteil (Materialanteil)            |
-| Rdc      | μm      | Profilhöhe                              |
-| Rt       | μm      | Gesamthöhe des Profils                 |
-| Rz1max   | μm      | Maximale Rautiefe                      |
-| Rk       | μm      | Kernrauheitstiefe                      |
-| Rpk      | μm      | Reduzierte Spitzenhöhe                 |
-| Rvk      | μm      | Reduzierte Riefentiefe                 |
-| Mr1      | %       | Materialanteil 1                       |
-| Mr2      | %       | Materialanteil 2                       |
-| A1       | -       | Fläche oberhalb des Kerns              |
-| A2       | -       | Fläche unterhalb des Kerns             |
+| Parameter | Einheit | Beschreibung                         |
+| --------- | ------- | ------------------------------------ |
+| Ra        | μm      | Arithmetische Mittenrauheit          |
+| Rz        | μm      | Mittlere Rautiefe                    |
+| Rq        | μm      | Quadratische Mittenrauheit (RMS)     |
+| Rp        | μm      | Maximale Profilspitzenhöhe           |
+| Rv        | μm      | Maximale Profiltal-Tiefe             |
+| Rsk       | μm      | Profilschiefenwert                   |
+| Rku       | μm      | Profilwölbungswert                   |
+| Rc        | μm      | Mittlere Höhe der Profilelemente     |
+| RPc       | /cm     | Anzahl der Profilelemente pro cm     |
+| RSm       | μm      | Mittlerer Abstand der Profilelemente |
+| RDq       | μm      | Mittlere quadratische Steigung       |
+| Rmr       | %       | Traganteil (Materialanteil)          |
+| Rdc       | μm      | Profilhöhe                           |
+| Rt        | μm      | Gesamthöhe des Profils               |
+| Rz1max    | μm      | Maximale Rautiefe                    |
+| Rk        | μm      | Kernrauheitstiefe                    |
+| Rpk       | μm      | Reduzierte Spitzenhöhe               |
+| Rvk       | μm      | Reduzierte Riefentiefe               |
+| Mr1       | %       | Materialanteil 1                     |
+| Mr2       | %       | Materialanteil 2                     |
+| A1        | -       | Fläche oberhalb des Kerns            |
+| A2        | -       | Fläche unterhalb des Kerns           |
 
 ## 🔧 Technische Details
 
