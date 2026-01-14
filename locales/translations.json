@@ -27,7 +27,7 @@
     "settings.placeholder": "Nastavení budou přidána v další verzi",
 
     "about.title": "Mitutoyo Data Converter",
-    "about.version": "Verze 2.0",
+    "about.version": "Verze 2.1.0",
     "about.info": "Aplikace pro převod dat z měřicího přístroje Mitutoyo SJ-412 do formátu Excel.\n\n✨ Funkce:\n• Import TXT souborů z měřicího přístroje\n• Automatické zpracování a analýza dat\n• Export do Excel formátu\n• Podpora různých měřicích parametrů\n\n👨‍💻 Autor: Roman Denev\n📅 Vytvořeno: 2025\n🐍 Technologie: Python, Tkinter, Pandas, customtkinter",
 
     "common.error": "Chyba",
@@ -92,7 +92,7 @@
     "settings.placeholder": "Settings will be added in a future version",
 
     "about.title": "Mitutoyo Data Converter",
-    "about.version": "Version 2.0",
+    "about.version": "Version 2.1.0",
     "about.info": "An application for converting data from the Mitutoyo SJ-412 measuring device to Excel.\n\n✨ Features:\n• Import TXT files from the device\n• Automatic processing and analysis\n• Export to Excel\n• Support for multiple measurement parameters\n\n👨‍💻 Author: Roman Denev\n📅 Created: 2025\n🐍 Tech: Python, Tkinter, Pandas, customtkinter",
 
     "common.error": "Error",
@@ -157,7 +157,7 @@
     "settings.placeholder": "Einstellungen werden in einer zukünftigen Version hinzugefügt",
 
     "about.title": "Mitutoyo Data Converter",
-    "about.version": "Version 2.0",
+    "about.version": "Version 2.1.0",
     "about.info": "Eine Anwendung zum Umwandeln von Daten vom Mitutoyo SJ-412 Messgerät in Excel.\n\n✨ Funktionen:\n• Import von TXT-Dateien vom Gerät\n• Automatische Verarbeitung und Analyse\n• Export nach Excel\n• Unterstützung mehrerer Messparameter\n\n👨‍💻 Autor: Roman Denev\n📅 Erstellt: 2025\n🐍 Technologie: Python, Tkinter, Pandas, customtkinter",
 
     "common.error": "Fehler",

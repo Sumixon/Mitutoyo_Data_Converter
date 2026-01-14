@@ -109,14 +109,6 @@ The resulting EXE file will be in the `dist/` folder.
 - **Architecture:** Object-oriented design with modular structure
 - **UI translations:** `locales/translations.json` (CS/EN/DE)
 
-## 🏳️ Flags (source)
-
-Flags are static assets (no automatic download). Put PNG files into `img/flags/` (preferred) or `img/`.
-
-- CZ: https://commons.wikimedia.org/wiki/File:Flag_of_the_Czech_Republic.svg
-- EN (UK): https://commons.wikimedia.org/wiki/File:Flag_of_the_United_Kingdom.svg
-- DE: https://commons.wikimedia.org/wiki/File:Flag_of_Germany.svg
-
 ## 📋 Input File Format
 
 The app expects TXT files from the Mitutoyo SJ-412 in the following structure:
@@ -162,20 +154,6 @@ The app expects TXT files from the Mitutoyo SJ-412 in the following structure:
 - For a large number of files, consider processing in smaller batches
 - Check available RAM
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### Coding standards:
-
-- Use Python PEP 8
-- Add docstrings for all functions
-- Write tests for new features
-
 ## 📄 License
 
 Distributed under the MIT License. See `LICENSE` for more information.
@@ -185,15 +163,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 **Roman Denev (Sumixon)**
 
 - GitHub: [@Sumixon](https://github.com/Sumixon)
-- Email: romna.denev@gmail.com
-
-## 🙏 Acknowledgements
-
-- [Python Software Foundation](https://www.python.org/) for a great programming language
-- [Pandas](https://pandas.pydata.org/) for powerful data processing
-- [OpenPyXL](https://openpyxl.readthedocs.io/) for Excel export functionality
-- [Tkinter](https://docs.python.org/3/library/tkinter.html) as the base GUI toolkit
-- [customtkinter](https://github.com/TomSchimansky/CustomTkinter) for the modern look of the app
+- Email: roman.denev@gmail.com
 
 ## 📈 Changelog
 

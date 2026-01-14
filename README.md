@@ -110,13 +110,6 @@ Výsledný EXE soubor najdete ve složce `dist/`.
 - **Architektura:** Objektově orientovaný design s modulární strukturou
 - **Překlady UI:** `locales/translations.json` (CS/EN/DE)
 
-## 🏳️ Vlajky (zdroj)
-
-Vlajky jsou v projektu staticky (žádné automatické stahování). Vložte PNG soubory do `img/flags/` (preferované) nebo do `img/`.
-
-- CZ: https://commons.wikimedia.org/wiki/File:Flag_of_the_Czech_Republic.svg
-- EN (UK): https://commons.wikimedia.org/wiki/File:Flag_of_the_United_Kingdom.svg
-- DE: https://commons.wikimedia.org/wiki/File:Flag_of_Germany.svg
 
 ## 📋 Formát vstupních souborů
 
@@ -163,19 +156,6 @@ Speed;0.5;mm/s
 - Pro velké množství souborů zvažte zpracování po menších dávkách
 - Zkontrolujte dostupnou RAM
 
-## 🤝 Přispívání
-
-1. Fork repozitáře
-2. Vytvořte feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit změny (`git commit -m 'Add some AmazingFeature'`)
-4. Push do branch (`git push origin feature/AmazingFeature`)
-5. Otevřete Pull Request
-
-### Coding standards:
-
-- Používejte Python PEP 8
-- Přidejte dokumentaci ke všem funkcím
-- Napište testy pro nové funkce
 
 ## 📄 Licence
 
@@ -186,15 +166,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 **Roman Denev (Sumixon)**
 
 - GitHub: [@Sumixon](https://github.com/Sumixon)
-- Email: romna.denev@gmail.com
+- Email: roman.denev@gmail.com
 
-## 🙏 Poděkování
-
-- [Python Software Foundation](https://www.python.org/) za skvělý programovací jazyk
-- [Pandas](https://pandas.pydata.org/) za výkonné data processing
-- [OpenPyXL](https://openpyxl.readthedocs.io/) za Excel export funkcionalitu
-- [Tkinter](https://docs.python.org/3/library/tkinter.html) jako základní GUI toolkit
-- [customtkinter](https://github.com/TomSchimansky/CustomTkinter) za moderní vzhled aplikace
 
 ## 📈 Changelog
 
