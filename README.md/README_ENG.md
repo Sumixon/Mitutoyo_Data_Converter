@@ -1,5 +1,7 @@
 # Mitutoyo Data Converter
 
+**Languages:** [Čeština](README.md) | [English](README_ENG.md) | [Deutsch](README_DE.md)
+
 A modern desktop application for converting measurement data from the Mitutoyo SJ-412 device from .txt format to Excel for Windows.
 
 Built with Python, the modern **customtkinter** GUI framework (dark/light mode) and **Pandas** for data processing.
@@ -63,6 +65,7 @@ The resulting EXE file will be in the `dist/` folder.
 ## 🚀 Quick Start
 
 1. **Start the app** - `python main.pyw`
+   - Switch UI language using the flags at the top of the window.
 2. **Import files** - click "📂 Import Files"
 3. **Select TXT files** from the Mitutoyo SJ-412 device
 4. **Review data** in the table
@@ -104,6 +107,15 @@ The resulting EXE file will be in the `dist/` folder.
 - **GUI Style:** Modern flat design, cards (CTkFrame), tabs (CTkTabview), dark/light mode
 - **File handling:** UTF-8 encoding with error handling support
 - **Architecture:** Object-oriented design with modular structure
+- **UI translations:** `locales/translations.json` (CS/EN/DE)
+
+## 🏳️ Flags (source)
+
+Flags are static assets (no automatic download). Put PNG files into `img/flags/` (preferred) or `img/`.
+
+- CZ: https://commons.wikimedia.org/wiki/File:Flag_of_the_Czech_Republic.svg
+- EN (UK): https://commons.wikimedia.org/wiki/File:Flag_of_the_United_Kingdom.svg
+- DE: https://commons.wikimedia.org/wiki/File:Flag_of_Germany.svg
 
 ## 📋 Input File Format
 

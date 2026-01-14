@@ -1,5 +1,7 @@
 # Mitutoyo Data Converter
 
+**Jazyky:** [Čeština](README.md) | [English](README_ENG.md) | [Deutsch](README_DE.md)
+
 Moderní desktop aplikace pro převod měřicích dat z přístroje Mitutoyo SJ-412 z formátu .txt do Excel pro Windows.
 
 Postavena na Pythonu, moderním GUI frameworku **customtkinter** (dark/light režim) a **Pandas** pro práci s daty.
@@ -64,6 +66,7 @@ Výsledný EXE soubor najdete ve složce `dist/`.
 ## 🚀 Rychlý start
 
 1. **Spusťte aplikaci** - `python main.pyw`
+	- Jazyk UI přepnete vlajkami v horní části okna.
 2. **Importujte soubory** - klikněte na "📂 Importovat soubory"
 3. **Vyberte TXT soubory** z měřicího přístroje Mitutoyo SJ-412
 4. **Zkontrolujte data** v tabulce
@@ -105,6 +108,15 @@ Výsledný EXE soubor najdete ve složce `dist/`.
 - **GUI Style:** Modern flat design, karty (CTkFrame), záložky (CTkTabview), dark/light režim
 - **File handling:** UTF-8 encoding s podporou chybových stavů
 - **Architektura:** Objektově orientovaný design s modulární strukturou
+- **Překlady UI:** `locales/translations.json` (CS/EN/DE)
+
+## 🏳️ Vlajky (zdroj)
+
+Vlajky jsou v projektu staticky (žádné automatické stahování). Vložte PNG soubory do `img/flags/` (preferované) nebo do `img/`.
+
+- CZ: https://commons.wikimedia.org/wiki/File:Flag_of_the_Czech_Republic.svg
+- EN (UK): https://commons.wikimedia.org/wiki/File:Flag_of_the_United_Kingdom.svg
+- DE: https://commons.wikimedia.org/wiki/File:Flag_of_Germany.svg
 
 ## 📋 Formát vstupních souborů
 

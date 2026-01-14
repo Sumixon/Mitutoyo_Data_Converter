@@ -1,0 +1,196 @@
+{
+  "cs": {
+    "app.window_title": "Převod txt souboru do xls formátu - SJ412 Mitutoyo",
+    "app.title": "Převod dat z Mitutoyo SJ-412",
+    "app.subtitle": "Aplikace pro zpracování měřicích dat",
+
+    "tabs.import": "📁 Import",
+    "tabs.settings": "⚙️ Nastavení",
+    "tabs.about": "ℹ️ O programu",
+
+    "buttons.import_files": "📂 Importovat soubory",
+    "buttons.export_excel": "📊 Exportovat do Excel",
+    "buttons.clear_files": "🗑️ Vymazat soubory",
+
+    "table.title": "Importované soubory",
+    "table.col.file": "📄 Soubor",
+    "table.col.date": "📅 Datum",
+    "table.col.ra": "📏 Ra [μm]",
+    "table.col.rz": "📐 Rz [μm]",
+
+    "excel.col.file": "Soubor",
+    "excel.col.date": "Datum",
+
+    "tip": "💡 Tip: Vyberte TXT soubory z měřicího přístroje a exportujte je do Excelu",
+
+    "settings.title": "Nastavení aplikace",
+    "settings.placeholder": "Nastavení budou přidána v další verzi",
+
+    "about.title": "Mitutoyo Data Converter",
+    "about.version": "Verze 2.0",
+    "about.info": "Aplikace pro převod dat z měřicího přístroje Mitutoyo SJ-412 do formátu Excel.\n\n✨ Funkce:\n• Import TXT souborů z měřicího přístroje\n• Automatické zpracování a analýza dat\n• Export do Excel formátu\n• Podpora různých měřicích parametrů\n\n👨‍💻 Autor: Roman Denev\n📅 Vytvořeno: 2025\n🐍 Technologie: Python, Tkinter, Pandas, customtkinter",
+
+    "common.error": "Chyba",
+    "common.info": "Info",
+    "common.done": "Hotovo",
+
+    "dialogs.select_files.title": "Vyberte TXT soubory z měřicího přístroje",
+
+    "confirm.delete.title": "Potvrdit smazání",
+    "confirm.delete.message": "Opravdu chcete smazat všechny TXT soubory?",
+
+    "import.error.title": "Chyba při importu",
+    "import.error.message": "Soubor {file} nelze importovat: {err}",
+
+    "export.success.title": "Export úspěšný",
+    "export.success.message": "Data byla uložena do souboru:\n{file}",
+    "export.no_files": "Žádné soubory k exportu v adresáři {dir}",
+    "export.no_data": "Žádná data k exportu",
+    "export.dir_missing": "Adresář {dir} neexistuje!",
+    "export.save_error": "Nelze uložit Excel soubor: {err}",
+
+    "delete.no_files": "Žádné soubory ke smazání",
+    "delete.success": "Soubory byly úspěšně smazány",
+    "delete.file_error.title": "Chyba při mazání",
+    "delete.file_error.message": "Soubor {file} nelze smazat: {err}",
+
+    "parse.error.title": "Chyba při zpracování souboru",
+    "parse.error.message": "Soubor {file} nelze zpracovat: {err}",
+
+    "unexpected.error": "Nastala neočekávaná chyba: {err}",
+
+    "language.cs": "Čeština",
+    "language.en": "English",
+    "language.de": "Deutsch"
+  },
+
+  "en": {
+    "app.window_title": "Convert TXT file to XLS format - SJ412 Mitutoyo",
+    "app.title": "Mitutoyo SJ-412 Data Converter",
+    "app.subtitle": "App for processing measurement data",
+
+    "tabs.import": "📁 Import",
+    "tabs.settings": "⚙️ Settings",
+    "tabs.about": "ℹ️ About",
+
+    "buttons.import_files": "📂 Import files",
+    "buttons.export_excel": "📊 Export to Excel",
+    "buttons.clear_files": "🗑️ Clear files",
+
+    "table.title": "Imported files",
+    "table.col.file": "📄 File",
+    "table.col.date": "📅 Date",
+    "table.col.ra": "📏 Ra [μm]",
+    "table.col.rz": "📐 Rz [μm]",
+
+    "excel.col.file": "File",
+    "excel.col.date": "Date",
+
+    "tip": "💡 Tip: Select TXT files from the measuring device and export them to Excel",
+
+    "settings.title": "Application settings",
+    "settings.placeholder": "Settings will be added in a future version",
+
+    "about.title": "Mitutoyo Data Converter",
+    "about.version": "Version 2.0",
+    "about.info": "An application for converting data from the Mitutoyo SJ-412 measuring device to Excel.\n\n✨ Features:\n• Import TXT files from the device\n• Automatic processing and analysis\n• Export to Excel\n• Support for multiple measurement parameters\n\n👨‍💻 Author: Roman Denev\n📅 Created: 2025\n🐍 Tech: Python, Tkinter, Pandas, customtkinter",
+
+    "common.error": "Error",
+    "common.info": "Info",
+    "common.done": "Done",
+
+    "dialogs.select_files.title": "Select TXT files from the measuring device",
+
+    "confirm.delete.title": "Confirm deletion",
+    "confirm.delete.message": "Do you really want to delete all TXT files?",
+
+    "import.error.title": "Import error",
+    "import.error.message": "File {file} cannot be imported: {err}",
+
+    "export.success.title": "Export successful",
+    "export.success.message": "Data has been saved to:\n{file}",
+    "export.no_files": "No files to export in directory {dir}",
+    "export.no_data": "No data to export",
+    "export.dir_missing": "Directory {dir} does not exist!",
+    "export.save_error": "Cannot save Excel file: {err}",
+
+    "delete.no_files": "No files to delete",
+    "delete.success": "Files were successfully deleted",
+    "delete.file_error.title": "Delete error",
+    "delete.file_error.message": "File {file} cannot be deleted: {err}",
+
+    "parse.error.title": "File processing error",
+    "parse.error.message": "File {file} cannot be processed: {err}",
+
+    "unexpected.error": "An unexpected error occurred: {err}",
+
+    "language.cs": "Čeština",
+    "language.en": "English",
+    "language.de": "Deutsch"
+  },
+
+  "de": {
+    "app.window_title": "TXT in XLS umwandeln - SJ412 Mitutoyo",
+    "app.title": "Mitutoyo SJ-412 Datenkonverter",
+    "app.subtitle": "Anwendung zur Verarbeitung von Messdaten",
+
+    "tabs.import": "📁 Import",
+    "tabs.settings": "⚙️ Einstellungen",
+    "tabs.about": "ℹ️ Über",
+
+    "buttons.import_files": "📂 Dateien importieren",
+    "buttons.export_excel": "📊 Nach Excel exportieren",
+    "buttons.clear_files": "🗑️ Dateien löschen",
+
+    "table.title": "Importierte Dateien",
+    "table.col.file": "📄 Datei",
+    "table.col.date": "📅 Datum",
+    "table.col.ra": "📏 Ra [μm]",
+    "table.col.rz": "📐 Rz [μm]",
+
+    "excel.col.file": "Datei",
+    "excel.col.date": "Datum",
+
+    "tip": "💡 Tipp: TXT-Dateien vom Messgerät auswählen und nach Excel exportieren",
+
+    "settings.title": "Anwendungseinstellungen",
+    "settings.placeholder": "Einstellungen werden in einer zukünftigen Version hinzugefügt",
+
+    "about.title": "Mitutoyo Data Converter",
+    "about.version": "Version 2.0",
+    "about.info": "Eine Anwendung zum Umwandeln von Daten vom Mitutoyo SJ-412 Messgerät in Excel.\n\n✨ Funktionen:\n• Import von TXT-Dateien vom Gerät\n• Automatische Verarbeitung und Analyse\n• Export nach Excel\n• Unterstützung mehrerer Messparameter\n\n👨‍💻 Autor: Roman Denev\n📅 Erstellt: 2025\n🐍 Technologie: Python, Tkinter, Pandas, customtkinter",
+
+    "common.error": "Fehler",
+    "common.info": "Info",
+    "common.done": "Fertig",
+
+    "dialogs.select_files.title": "TXT-Dateien vom Messgerät auswählen",
+
+    "confirm.delete.title": "Löschen bestätigen",
+    "confirm.delete.message": "Möchten Sie wirklich alle TXT-Dateien löschen?",
+
+    "import.error.title": "Importfehler",
+    "import.error.message": "Datei {file} kann nicht importiert werden: {err}",
+
+    "export.success.title": "Export erfolgreich",
+    "export.success.message": "Daten wurden gespeichert in:\n{file}",
+    "export.no_files": "Keine Dateien zum Export im Verzeichnis {dir}",
+    "export.no_data": "Keine Daten zum Export",
+    "export.dir_missing": "Verzeichnis {dir} existiert nicht!",
+    "export.save_error": "Excel-Datei kann nicht gespeichert werden: {err}",
+
+    "delete.no_files": "Keine Dateien zum Löschen",
+    "delete.success": "Dateien wurden erfolgreich gelöscht",
+    "delete.file_error.title": "Löschfehler",
+    "delete.file_error.message": "Datei {file} kann nicht gelöscht werden: {err}",
+
+    "parse.error.title": "Fehler bei der Dateiverarbeitung",
+    "parse.error.message": "Datei {file} kann nicht verarbeitet werden: {err}",
+
+    "unexpected.error": "Ein unerwarteter Fehler ist aufgetreten: {err}",
+
+    "language.cs": "Čeština",
+    "language.en": "English",
+    "language.de": "Deutsch"
+  }
+}
