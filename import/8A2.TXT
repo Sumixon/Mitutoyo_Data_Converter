@@ -1,0 +1,49 @@
+// Header
+Version;SJ-410;V.1.014
+Date;02/03/2012;01:00:11
+Mode;RES
+// Condition-A
+Standard;ISO1997
+Profile;R
+Filter;GAUSS
+Lc;0,25;mm
+Ls;2,5;um
+N;15
+Pre_Length;ON
+Del.Wave;OFF
+Compens;OFF
+Mean Line;OFF
+GO/NG;Average
+M-Speed;0,5;mm/s
+R-Speed;2,0;mm/s
+Range;AUTO
+OverRange;ESC
+Arm-Comp;OFF
+Resume-Cal;OFF
+Stylus;12AAE893
+Pitch;0,5;um
+// CalcResult
+Ra;0,070;um;;
+Rq;0,090;um;;
+Rz;0,512;um;;
+Rp;0,209;um;;
+Rv;0,302;um;;
+Rsk;-0,396;;;
+Rku;3,729;;;
+Rc;0,281;um;Zp/Zv:10,0%;
+RPc;279,85;/cm;Zp/Zv:10,0%;
+RSm;35,7;um;Zp/Zv:10,0%;
+RDq;0,039;;;
+Rmr;1,973;%;0,0%:0,10um;
+Rmr(c);1,400;%;P:10,0%;
+Rmr(c);3,960;%;P:15,0%;
+Rdc;0,050;um;10,0%:25,0%;
+Rt;0,875;um;;
+Rz1max;0,852;um;;
+Rk;0,215;um;;
+Rpk;0,094;um;;
+Rvk;0,129;um;;
+Mr1;10,067;%;;
+Mr2;87,707;%;;
+A1;0,48;;;
+A2;0,79;;;
